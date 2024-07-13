@@ -1,0 +1,1 @@
+cmd /k java -jar out/artifacts/BowlingGame_jar/BowlingGame.jar
