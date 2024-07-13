@@ -3,6 +3,7 @@ package com.bowling;
 import com.simulation.BowlingGameSimulation;
 import com.utilities.InputManager;
 
+import java.io.File;
 import java.util.List;
 
 public class Main {
@@ -29,8 +30,6 @@ public class Main {
         }
     }
 
-    //<editor-fold desc="Internal helper methods">
-
     private static boolean isCurrentModeSimulation(String[] args) {
 
         return args.length == 1 && args[0].equals("simulation");
@@ -49,8 +48,6 @@ public class Main {
     private static List<int[]> getScoreCollection(String[] args) {
 
         String fileName = getInputFileName(args);
-        return isCurrentModeFileInput(args) ? InputManager .readFromFile(fileName) : InputManager.readFromConsole();
+        return isCurrentModeFileInput(args) ? InputManager.readFromFile(fileName) : InputManager.readFromConsole();
     }
-
-    //</editor-fold>
 }
