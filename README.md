@@ -1,2 +1,2 @@
 # BowlingGame
-Bowling game score calculation
+Bowling game score calculation algorithm.
