@@ -130,19 +130,17 @@ public class BowlingGameTest {
         alley = null;
     }
 
-    //<editor-fold desc="Helper methods">
-
     private void ballThrowRepeat(Game game, int ballCount, int knockedPinsCount) {
 
-        for(int i = 0; i < ballCount; i++)
+        for(int i = 0; i < ballCount; i++) {
             game.getCurrentPlayer().throwBall(knockedPinsCount);
+        }
     }
 
     private void ballThrowRepeatWithAlternating(Game game, int ballCount, int first, int second) {
 
-        for(int i = 0; i < 20; i++)
+        for(int i = 0; i < 20; i++) {
             game.getCurrentPlayer().throwBall(i % 2 == 0 ? first : second);
+        }
     }
-
-    //</editor-fold>
 }
