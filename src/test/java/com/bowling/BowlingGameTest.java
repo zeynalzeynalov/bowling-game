@@ -6,6 +6,8 @@ public class BowlingGameTest {
 
     Alley alley = new Alley("Test");
 
+    Player player = new Player("Test");
+
     @Before
     public void setUp() throws Exception {
 
@@ -15,7 +17,7 @@ public class BowlingGameTest {
     public void startingScoreIsZero() {
 
         Game game = alley.createNewGame("No Score");
-        game.addPlayer(new Player("Test"));
+        game.addPlayer(player);
         game.print();
 
         Assert.assertEquals(0, game.getScore());
@@ -25,7 +27,7 @@ public class BowlingGameTest {
     public void allBallsMissed() {
 
         Game game = alley.createNewGame("All Balls Missed");
-        game.addPlayer(new Player("Test"));
+        game.addPlayer(player);
         ballThrowRepeat(game, 20, 0);
         game.print();
 
@@ -36,7 +38,7 @@ public class BowlingGameTest {
     public void allBallsMissedLastTwoTenPins() {
 
         Game game = alley.createNewGame("All Balls Missed Last Two Ten Pins");
-        game.addPlayer(new Player("Test"));
+        game.addPlayer(player);
         ballThrowRepeat(game, 19, 0);
         game.getCurrentPlayer().throwBall(10);
         game.getCurrentPlayer().throwBall(10);
@@ -49,7 +51,7 @@ public class BowlingGameTest {
     public void allBallsKnockedOnePin() {
 
         Game game = alley.createNewGame("All Balls Knocked One Pin");
-        game.addPlayer(new Player("Test"));
+        game.addPlayer(player);
         ballThrowRepeat(game, 20, 1);
         game.print();
 
@@ -60,7 +62,7 @@ public class BowlingGameTest {
     public void allBallsKnockedTwoPins() {
 
         Game game = alley.createNewGame("All Balls Knocked Two Pins");
-        game.addPlayer(new Player("Test"));
+        game.addPlayer(player);
         ballThrowRepeat(game, 20, 2);
         game.print();
 
@@ -71,7 +73,7 @@ public class BowlingGameTest {
     public void allBallsKnockedStrike() {
 
         Game game = alley.createNewGame("All Balls Knocked Strike");
-        game.addPlayer(new Player("Test"));
+        game.addPlayer(player);
         ballThrowRepeat(game, 12, 10);
         game.print();
 
@@ -82,7 +84,7 @@ public class BowlingGameTest {
     public void allBallsKnockedSpareAndLastStrike() {
 
         Game game = alley.createNewGame("All Balls Knocked Spare And Last Strike");
-        game.addPlayer(new Player("Test"));
+        game.addPlayer(player);
         ballThrowRepeat(game, 20, 5);
         game.getCurrentPlayer().throwBall(10);
         game.print();
@@ -94,7 +96,7 @@ public class BowlingGameTest {
     public void allBallsKnockedSpareAndLastMiss() {
 
         Game game = alley.createNewGame("All Balls Knocked Spare And Last Miss");
-        game.addPlayer(new Player("Test"));
+        game.addPlayer(player);
         ballThrowRepeat(game, 20, 5);
         game.getCurrentPlayer().throwBall(0);
         game.print();
@@ -106,7 +108,7 @@ public class BowlingGameTest {
     public void scoreWillBeOneHundredThirtyThree() {
 
         Game game = alley.createNewGame("Score Will Be One Hundred Thirty Three");
-        game.addPlayer(new Player("Test"));
+        game.addPlayer(player);
         game.getCurrentPlayer().throwBall(new int[] {1,4, 4,5, 6,4, 5,5, 10, 0,1, 7,3, 6,4, 10, 2, 8, 6});
         game.print();
 
@@ -117,8 +119,8 @@ public class BowlingGameTest {
     public void allFirstBallsKnockedOneSecondMissed() {
 
         Game game = alley.createNewGame("All First Balls Knocked One Second Missed");
-        game.addPlayer(new Player("Test"));
-        ballThrowRepeatWithAlternating(game, 20, 1, 0);
+        game.addPlayer(player);
+        ballThrowRepeatWithAlternating(game, 1, 0);
         game.print();
 
         Assert.assertEquals(10, game.getScore());
@@ -137,7 +139,7 @@ public class BowlingGameTest {
         }
     }
 
-    private void ballThrowRepeatWithAlternating(Game game, int ballCount, int first, int second) {
+    private void ballThrowRepeatWithAlternating(Game game, int first, int second) {
 
         for(int i = 0; i < 20; i++) {
             game.getCurrentPlayer().throwBall(i % 2 == 0 ? first : second);
