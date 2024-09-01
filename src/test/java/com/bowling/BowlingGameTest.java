@@ -8,11 +8,6 @@ public class BowlingGameTest {
 
     Player player = new Player("Test");
 
-    @Before
-    public void setUp() throws Exception {
-
-    }
-
     @Test
     public void startingScoreIsZero() {
 
