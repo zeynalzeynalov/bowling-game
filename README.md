@@ -1,6 +1,9 @@
 # Bowling game
 Bowling game score calculation algorithm:
 
+Tech stack:
+- Java
+
 ![ReadMe](https://raw.githubusercontent.com/zeynalzeynalov/bowling-game/main/docs/ReadMe-1.png)
 ![ReadMe](https://raw.githubusercontent.com/zeynalzeynalov/bowling-game/main/docs/ReadMe-2.png)
 ![ReadMe](https://raw.githubusercontent.com/zeynalzeynalov/bowling-game/main/docs/ReadMe-3.png)
